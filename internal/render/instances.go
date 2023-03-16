@@ -7,13 +7,13 @@ import (
 
 func Instances(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles(
-		"./dist/template/instances.gohtml",
+		"./internal/render/instances.gohtml",
 	)
 	if err != nil {
 		panic(err)
 	}
 
-	err = t.ExecuteTemplate(w, "transactions", nil)
+	err = t.ExecuteTemplate(w, "instances", nil)
 	if err != nil {
 		panic(err)
 	}

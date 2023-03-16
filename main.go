@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/jtfm/ec2-scheduler/internal/integrate"
 	"github.com/jtfm/go-cdk-core/pkg/lambda"
-	"github.com/jtfm/ec2-scheduler/integrate"
 )
 
 func main() {
-	lambda.SwitchingListenAndServe(integrate.Router)
+	lambda.SwitchingListenAndServe(integrate.Router(), ":3000")
 }
